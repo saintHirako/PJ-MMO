@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nullspace — Infrastructure for the new compute</title>
+<meta name="description" content="Deploy, scale, and observe AI workloads on bare metal you actually control. Built for teams shipping at the edge of what's possible." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700;9..144,900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Grain overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Scan-line CRT effect -->
+<div class="scanlines" aria-hidden="true"></div>
+
+<!-- Background grid -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <span class="logo-mark">◣</span>
+    <span class="logo-text">NULLSPACE</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#product">Product</a></li>
+    <li><a href="#metrics">Metrics</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#" class="btn-ghost">Sign in</a>
+    <a href="#" class="btn-primary">Get access <span class="arrow">→</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-meta">
+    <span class="status-dot"></span>
+    <span>v2.4.0 — shipped Tuesday</span>
+    <span class="sep">/</span>
+    <span>SOC&nbsp;2&nbsp;Type&nbsp;II</span>
+  </div>
+
+  <h1 class="hero-title">
+    <span class="title-line"><span class="bracket">[</span>&nbsp;Infrastructure&nbsp;<span class="bracket">]</span></span>
+    <span class="title-line italic">for the new</span>
+    <span class="title-line accent">compute era.</span>
+  </h1>
+
+  <p class="hero-sub">
+    Deploy, scale, and observe AI workloads on bare metal you actually
+    control. No black boxes. No mystery bills. Just the primitives your
+    team has been asking for.
+  </p>
+
+  <div class="hero-cta">
+    <a href="#" class="btn-primary big">Start deploying <span class="arrow">→</span></a>
+    <a href="#" class="btn-ghost big"><span class="play">▷</span> Watch demo · 2:14</a>
+  </div>
+
+  <!-- Terminal -->
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="terminal-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="terminal-title">~ /nullspace/deploy</div>
+      <div class="terminal-tag">live</div>
+    </div>
+    <pre class="terminal-body"><code><span class="t-prompt">$</span> <span class="t-cmd">nullspace deploy</span> <span class="t-flag">--region</span> sgp-1 <span class="t-flag">--gpu</span> h100x8
+<span class="t-dim">→ resolving manifest...........</span> <span class="t-ok">ok</span>
+<span class="t-dim">→ provisioning 8× H100 (80GB)..</span> <span class="t-ok">ok</span>
+<span class="t-dim">→ attaching observability......</span> <span class="t-ok">ok</span>
+<span class="t-dim">→ warm pool ready..............</span> <span class="t-ok">ok</span>
+
+<span class="t-arrow">◆</span> deployment <span class="t-highlight">nullspace-prod-7a91c</span> is live
+<span class="t-arrow">◆</span> endpoint:  <span class="t-link">https://7a91c.nullspace.run</span>
+<span class="t-arrow">◆</span> first&nbsp;token: <span class="t-num">38ms</span> · throughput: <span class="t-num">2,140 tok/s</span><span class="cursor">▊</span></code></pre>
+  </div>
+
+  <div class="trust-strip">
+    <span class="trust-label">Trusted by teams at</span>
+    <div class="trust-logos">
+      <span>ATLAS&nbsp;LABS</span>
+      <span>HELION</span>
+      <span>◢ MERIDIAN</span>
+      <span>VOID/CORP</span>
+      <span>POLARIS&nbsp;AI</span>
+      <span>KAIROS</span>
+    </div>
+  </div>
+</header>
+
+<!-- METRICS -->
+<section class="metrics" id="metrics">
+  <div class="metric">
+    <div class="metric-num"><span data-count="38">00</span><span class="unit">ms</span></div>
+    <div class="metric-label">p50 cold start</div>
+    <div class="metric-foot">vs. industry avg 1,200ms</div>
+  </div>
+  <div class="metric">
+    <div class="metric-num"><span data-count="99.99">0</span><span class="unit">%</span></div>
+    <div class="metric-label">measured uptime</div>
+    <div class="metric-foot">trailing 12 months</div>
+  </div>
+  <div class="metric">
+    <div class="metric-num"><span data-count="14">0</span><span class="unit">×</span></div>
+    <div class="metric-label">cheaper than hyperscalers</div>
+    <div class="metric-foot">benchmark: llama-70b inference</div>
+  </div>
+  <div class="metric">
+    <div class="metric-num"><span data-count="0">0</span></div>
+    <div class="metric-label">vendor lock-in</div>
+    <div class="metric-foot">OCI-compatible, byo cluster</div>
+  </div>
+</section>
+
+<!-- PRODUCT / FEATURES -->
+<section class="features" id="product">
+  <div class="section-head">
+    <div class="section-kicker">
+      <span class="kicker-num">01</span> / The platform
+    </div>
+    <h2 class="section-title">
+      Everything between <em>code</em> and <em>silicon</em>,<br />
+      none of the <span class="strike">surprises</span> latency.
+    </h2>
+  </div>
+
+  <div class="feature-grid">
+    <article class="feature feature-lg">
+      <div class="feature-icon">◐</div>
+      <h3>Cold start, finally cold-blooded</h3>
+      <p>Pre-warmed pools across 14 regions. We charge per microsecond. Your model is responding before AWS is done parsing your YAML.</p>
+      <div class="feature-detail">
+        <code>p50 38ms · p99 91ms</code>
+      </div>
+    </article>
+
+    <article class="feature">
+      <div class="feature-icon">◇</div>
+      <h3>Observability by default</h3>
+      <p>Distributed traces, GPU utilization, token-level cost attribution. No agents to install. No dashboards to wire up.</p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-icon">◢</div>
+      <h3>Bare-metal economics</h3>
+      <p>You pay for the silicon, not the marketing margin. Reserved capacity from $0.81/hr per H100.</p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-icon">◯</div>
+      <h3>Multi-tenant isolation</h3>
+      <p>VRF-based network isolation, encrypted VRAM, hardware attestation. Audited by the people who audit your auditors.</p>
+    </article>
+
+    <article class="feature feature-wide">
+      <div class="feature-icon">⬡</div>
+      <h3>Built for the API-first world</h3>
+      <p>One <code>POST</code> request to spin up. One <code>DELETE</code> to tear down. Terraform, Pulumi, and a CLI that respects your time. Every primitive is a primitive — composable, predictable, debuggable.</p>
+      <div class="feature-detail row">
+        <code>POST /v1/deployments</code>
+        <code>GET /v1/traces</code>
+        <code>WS /v1/stream</code>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- STACK / ARCHITECTURE -->
+<section class="stack" id="stack">
+  <div class="section-head">
+    <div class="section-kicker">
+      <span class="kicker-num">02</span> / The stack
+    </div>
+    <h2 class="section-title">
+      Designed by people who've<br />
+      <em>actually</em> debugged at 3am.
+    </h2>
+  </div>
+
+  <div class="stack-layers">
+    <div class="layer" data-layer="07">
+      <div class="layer-id">L7</div>
+      <div class="layer-name">Your application</div>
+      <div class="layer-desc">REST · gRPC · WebSocket · whatever you ship</div>
+    </div>
+    <div class="layer" data-layer="06">
+      <div class="layer-id">L6</div>
+      <div class="layer-name">Nullspace runtime</div>
+      <div class="layer-desc">Auto-scaling · batching · request queuing</div>
+    </div>
+    <div class="layer" data-layer="05">
+      <div class="layer-id">L5</div>
+      <div class="layer-name">Observability mesh</div>
+      <div class="layer-desc">OpenTelemetry-native · zero-config tracing</div>
+    </div>
+    <div class="layer" data-layer="04">
+      <div class="layer-id">L4</div>
+      <div class="layer-name">Scheduler</div>
+      <div class="layer-desc">Topology-aware GPU placement · NUMA-pinned</div>
+    </div>
+    <div class="layer" data-layer="03">
+      <div class="layer-id">L3</div>
+      <div class="layer-name">Network fabric</div>
+      <div class="layer-desc">3.2 Tbps non-blocking · RDMA over Converged Ethernet</div>
+    </div>
+    <div class="layer" data-layer="02">
+      <div class="layer-id">L2</div>
+      <div class="layer-name">Bare metal</div>
+      <div class="layer-desc">H100 · H200 · MI300X · GB200 · custom silicon</div>
+    </div>
+    <div class="layer" data-layer="01">
+      <div class="layer-id">L1</div>
+      <div class="layer-name">Power, cooling, sweat</div>
+      <div class="layer-desc">Liquid-cooled. Renewables-backed. Boring on purpose.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-head">
+    <div class="section-kicker">
+      <span class="kicker-num">03</span> / Pricing
+    </div>
+    <h2 class="section-title">
+      Three plans.<br />
+      <em>No</em> "contact sales" wall.
+    </h2>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="plan">
+      <div class="plan-name">Hobbyist</div>
+      <div class="plan-price">$0<span>/mo</span></div>
+      <div class="plan-tagline">For nights and weekends.</div>
+      <ul>
+        <li>10 GPU-hours per month</li>
+        <li>Single region</li>
+        <li>Community support</li>
+        <li>Public deployments</li>
+      </ul>
+      <a href="#" class="btn-ghost wide">Start free</a>
+    </div>
+
+    <div class="plan plan-featured">
+      <div class="plan-badge">Most chosen</div>
+      <div class="plan-name">Builder</div>
+      <div class="plan-price">$240<span>/mo</span></div>
+      <div class="plan-tagline">For teams shipping in production.</div>
+      <ul>
+        <li>Unlimited deployments</li>
+        <li>All 14 regions</li>
+        <li>SOC 2 + audit logs</li>
+        <li>99.99% uptime SLA</li>
+        <li>Slack-channel support</li>
+      </ul>
+      <a href="#" class="btn-primary wide">Get Builder <span class="arrow">→</span></a>
+    </div>
+
+    <div class="plan">
+      <div class="plan-name">Sovereign</div>
+      <div class="plan-price">Custom</div>
+      <div class="plan-tagline">Your hardware, our control plane.</div>
+      <ul>
+        <li>BYO cluster / air-gapped</li>
+        <li>Dedicated solutions architect</li>
+        <li>FedRAMP-ready</li>
+        <li>Source code escrow</li>
+      </ul>
+      <a href="#" class="btn-ghost wide">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>
+      Stop renting <em>opinions</em>.<br />
+      Start running <span class="accent">infrastructure</span>.
+    </h2>
+    <div class="final-cta-actions">
+      <a href="#" class="btn-primary big">Get access <span class="arrow">→</span></a>
+      <a href="#" class="btn-ghost big">Read the docs</a>
+    </div>
+    <div class="final-cta-foot">
+      No credit card · No sales call · Deploy in 90 seconds
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="logo-mark big">◣</span>
+      <span class="logo-text">NULLSPACE</span>
+      <p>Infrastructure for the new compute era. Built in Singapore, Berlin, and a lot of basements.</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Product</h4>
+        <a href="#">Platform</a>
+        <a href="#">Pricing</a>
+        <a href="#">Changelog</a>
+        <a href="#">Status</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="#">Docs</a>
+        <a href="#">API reference</a>
+        <a href="#">Benchmarks</a>
+        <a href="#">Blog</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Security</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nullspace Labs</span>
+    <span class="footer-status"><span class="status-dot green"></span> All systems normal</span>
+    <span>Crafted with friction.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
